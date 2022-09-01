@@ -1,0 +1,21 @@
+.Home {
+    text-align: center;
+    display: grid;
+    grid-template-rows: 50% 50%;
+    height:100%;
+    background: aqua;
+}
+
+.Home-Content {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around;
+   align-items: center; 
+   border-style: solid;
+   margin: 1%;
+    
+}
+
+.Home-Content-wrapper {
+    height: 60%;
+}

@@ -1,9 +1,17 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
-import {useEffect, useState} from 'react';
+import { Route, Routes} from 'react-router-dom';
+
+import Home from './components/pages/Home/Home.js';
+import Garden from './components/pages/Garden/Garden.js';
+import Hive from './components/pages/Hive/Hive.js';
+
+import Navbar from './components/Navbar/Navbar.js';
+import Sidebar from './components/Sidebar/Sidebar.js';
+import testData from './testData.js'
 
 function App() {
-
+  const [count, setCount] = useState(0);
   function getData() {
     fetch('/api/just/testing/')
       .then(response => response.json())
@@ -13,24 +21,30 @@ function App() {
       });
     }
     useEffect(getData, []);
-
+ 
+  function counter() {
+    setCount(count+1)
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <h1>edit test</h1>
-      </header>
+      {console.log('Hello World')}
+      {console.log('The test data is: ', testData)}
+      <div className="Sidebar-Component">
+        <Sidebar />
+      </div>
+      <div className="Navbar-Component">
+        <Navbar />
+      </div>
+      <div className="Content-Component">
+      <Routes>
+        <Route path='/' element={<Home data={testData} count={count}/>} />
+        <Route path='/garden' element={<Garden count={count} children={counter}/>} />\
+        <Route path='/hive' element={<Hive />} />
+      </Routes>
+      </div>
+
+
+
     </div>
   );
 }

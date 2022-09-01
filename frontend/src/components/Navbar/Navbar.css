@@ -1,0 +1,17 @@
+.Navbar {
+    display: flex;
+    height: 100%;
+    width:100%;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 5%;
+}
+
+.Navbar-title {
+    font-size: large;
+}
+
+.Navbar-link {
+    margin-left: 5%;
+    color: blueviolet;
+}

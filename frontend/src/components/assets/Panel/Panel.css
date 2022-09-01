@@ -1,0 +1,19 @@
+.Panel {
+    height: 100%;
+    max-width: 500px;
+    min-width: 300px;
+    border-style: solid;
+    display:flex;
+    align-items: center;
+    justify-content: center; 
+    transition: background-color 1s;  
+}
+
+.Panel:hover {
+    background-color: lightblue;
+}
+
+.Panel-title {
+   font-weight: bold;
+   font-size: 18pt;
+}
