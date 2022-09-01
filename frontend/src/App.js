@@ -1,7 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
+import {useEffect, useState} from 'react';
 
 function App() {
+
+  function getData() {
+    fetch('/api/just/testing/')
+      .then(response => response.json())
+      .then(data => {
+        console.log('Got Data form Django!');
+        console.log(data);
+      });
+    }
+    useEffect(getData, []);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -17,6 +29,7 @@ function App() {
         >
           Learn React
         </a>
+        <h1>edit test</h1>
       </header>
     </div>
   );

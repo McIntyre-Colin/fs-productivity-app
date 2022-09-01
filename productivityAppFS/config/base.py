@@ -126,3 +126,8 @@ LOGIN_URL = '/account/login/'
 
 # Specify we are using a custom user model
 AUTH_USER_MODEL = 'accounts.User'
+
+# Static Files
+STATICFILES_DIRS = [
+            os.path.join(BASE_DIR, '..', 'frontend', 'build', 'static'),
+        ]
